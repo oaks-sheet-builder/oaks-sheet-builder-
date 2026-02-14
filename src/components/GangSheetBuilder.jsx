@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Rnd } from 'react-rnd';
-import html2canvas from 'html2canvas';
 import './GangSheetBuilder.css';
 
 function GangSheetBuilder() {
@@ -104,13 +103,7 @@ function GangSheetBuilder() {
       saveButton.innerHTML = '💾 Saving...';
       saveButton.disabled = true;
 
-      const canvas = await html2canvas(canvasRef.current, {
-        backgroundColor: '#ffffff',
-        scale: 2,
-        logging: false
-      });
 
-      const imageData = canvas.toDataURL('image/png');
       const designId = `OB-${Date.now()}`;
       
       setTimeout(() => {
